@@ -17,8 +17,10 @@ const App = () => {
 
     const handleCellClick = (index) => {
         setAttempts(attempts + 1);
-        const newItems = [...items];
-        newItems[index].clicked = true;
+        const newItems = items.map((item, i) => ({
+            ...item,
+            clicked: item.clicked || i === index,
+        }));
         setItems(newItems);
     };
 
@@ -30,8 +32,8 @@ const App = () => {
     return (
         <div>
             <AttemptsCounter attempts={attempts} />
-            <ResetButton onReset={handleReset} />
             <GameBoard items={items} onCellClick={handleCellClick} />
+            <ResetButton onReset={handleReset} />
         </div>
     );
 };
