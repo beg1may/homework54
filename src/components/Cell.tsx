@@ -9,8 +9,9 @@ const Cell = ({ item, onClick }) => {
 
     return (
         <div className={`cell ${item.clicked ? 'clicked' : ''}`} onClick={handleClick}>
-            {item.clicked && item.hasItem && 'O'}
+            {item.clicked && item.hasItem ? 'O' : null}
         </div>
+
     );
 };
 

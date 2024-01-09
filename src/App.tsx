@@ -1,8 +1,8 @@
-// App.js
 import React, { useState } from 'react';
 import GameBoard from './components/GameBoard';
 import AttemptsCounter from './components/AttemptsCounter';
 import ResetButton from './components/ResetButton';
+import './style.css';
 
 const createItems = () => {
     const items = Array(36).fill({ hasItem: false, clicked: false });
